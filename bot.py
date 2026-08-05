@@ -5,9 +5,9 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes
 
 # ========== НАСТРОЙКИ (БЕРИ ИЗ ПЕРЕМЕННЫХ ОКРУЖЕНИЯ) ==========
-BOT_TOKEN = os.environ.get("8877139742:AAHpj60YF6rKJPbWf1cuMrKPjeXIZeXS4Hs")
-ADMIN_CHAT_ID = os.environ.get("8884370338")
-CONTACT_USERNAME = os.environ.get("ImLoveLoli")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+ADMIN_CHAT_ID = os.environ.get("ADMIN_CHAT_ID")
+CONTACT_USERNAME = os.environ.get("CONTACT_USERNAME")
 
 if not BOT_TOKEN or not ADMIN_CHAT_ID or not CONTACT_USERNAME:
     print("❌ Ошибка: не заданы переменные окружения BOT_TOKEN, ADMIN_CHAT_ID, CONTACT_USERNAME")
