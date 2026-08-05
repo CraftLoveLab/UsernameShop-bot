@@ -97,11 +97,15 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 break
         if found:
             user = update.effective_user
+            # Получаем username или ставим "нет"
+            username = f"@{user.username}" if user.username else "❌ нет username"
+            
             # Уведомление админу
             admin_msg = (
                 f"🔔 Пользователь хочет купить товар!\n"
                 f"Товар: {found['name']}\n"
-                f"Пользователь: @{user.username or 'без username'} (ID: {user.id})\n"
+                f"Username: {username}\n"
+                f"ID пользователя: {user.id}\n"
                 f"Ссылка: tg://user?id={user.id}"
             )
             await context.bot.send_message(chat_id=ADMIN_CHAT_ID, text=admin_msg)
@@ -128,9 +132,13 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 found = items[prod_id]
                 break
         user = update.effective_user
+        # Получаем username или ставим "нет"
+        username = f"@{user.username}" if user.username else "❌ нет username"
+        
         admin_msg = (
             f"⚠️ У пользователя СПАМ-БЛОК!\n"
             f"Товар: {found['name'] if found else 'неизвестен'}\n"
+            f"Username: {username}\n"
             f"ID пользователя: {user.id}\n"
             f"Напиши ему: tg://user?id={user.id}"
         )
