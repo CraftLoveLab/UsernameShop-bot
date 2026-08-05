@@ -1,0 +1,1 @@
+python-UsernameShop-bot==20.6
