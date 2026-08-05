@@ -97,6 +97,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 break
         if found:
             user = update.effective_user
+            # Уведомление админу
             admin_msg = (
                 f"🔔 Пользователь хочет купить товар!\n"
                 f"Товар: {found['name']}\n"
@@ -105,6 +106,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
             await context.bot.send_message(chat_id=ADMIN_CHAT_ID, text=admin_msg)
 
+            # Ответ пользователю
             await query.edit_message_text(
                 f"Свяжись с нами: @{CONTACT_USERNAME}\n"
                 "Мы ответим в ближайшее время.\n\n"
