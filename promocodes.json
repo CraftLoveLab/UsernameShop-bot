@@ -1,10 +1,1 @@
-{
-  "1BUYUSER": {
-    "discount": 5,
-    "type": "percent",
-    "max_uses": 100,
-    "used": 0,
-    "active": true,
-    "description": "Скидка 5% на все товары"
-  }
-}
+
