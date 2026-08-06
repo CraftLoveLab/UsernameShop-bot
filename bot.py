@@ -66,8 +66,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard.append([InlineKeyboardButton("🔙 Назад к категориям", callback_data="show_categories")])
         await query.edit_message_text(f"Товары в категории «{category}»:", reply_markup=InlineKeyboardMarkup(keyboard))
 
-    # Показываем способы покупки для товара
-       # Показываем способы покупки для товара (с картинкой)
+    # Показываем способы покупки для товара (с картинкой)
     elif data.startswith("prod_"):
         prod_id = data[5:]
         found = None
@@ -82,7 +81,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("🔗 PLAYEROK", url=found.get("link_playerok", ""))],
                 [InlineKeyboardButton("🔗 STARVELL", url=found.get("link_starvell", ""))],
                 [InlineKeyboardButton("💬 Договориться лично", callback_data=f"contact_{prod_id}")],
-                [InlineKeyboardButton("🔙 Назад", callback_data="show_categories")]
+                [InlineKeyboardButton("🔙 Назад к категориям", callback_data="show_categories")]
             ]
             
             # Если есть картинка — отправляем с фото
@@ -92,56 +91,9 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     caption=text,
                     reply_markup=InlineKeyboardMarkup(keyboard)
                 )
-                await query.delete_message()  # Удаляем старое сообщение с кнопкой
+                await query.delete_message()  # Удаляем старое сообщение
             else:
                 await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-        else:
-            await query.edit_message_text("Товар не найден.")    # Показываем способы покупки для товара (с картинкой)
-    elif data.startswith("prod_"):
-        prod_id = data[5:]
-        found = None
-        for cat, items in products.items():
-            if prod_id in items:
-                found = items[prod_id]
-                break
-        if found:
-            text = f"Товар: {found['name']}\nЦена: {found['price']}\n\nВыбери способ покупки:"
-            keyboard = [
-                [InlineKeyboardButton("🔗 GGSEL", url=found.get("link_ggsel", ""))],
-                [InlineKeyboardButton("🔗 PLAYEROK", url=found.get("link_playerok", ""))],
-                [InlineKeyboardButton("🔗 STARVELL", url=found.get("link_starvell", ""))],
-                [InlineKeyboardButton("💬 Договориться лично", callback_data=f"contact_{prod_id}")],
-                [InlineKeyboardButton("🔙 Назад", callback_data="show_categories")]
-            ]
-            
-            # Если есть картинка — отправляем с фото
-            if found.get("image"):
-                await query.message.reply_photo(
-                    photo=found["image"],
-                    caption=text,
-                    reply_markup=InlineKeyboardMarkup(keyboard)
-                )
-                await query.delete_message()  # Удаляем старое сообщение с кнопкой
-            else:
-                await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
-        else:
-            await query.edit_message_text("Товар не найден.")
-        prod_id = data[5:]
-        found = None
-        for cat, items in products.items():
-            if prod_id in items:
-                found = items[prod_id]
-                break
-        if found:
-            text = f"Товар: {found['name']}\nЦена: {found['price']}\n\nВыбери способ покупки:"
-            keyboard = [
-                [InlineKeyboardButton("🔗 GGSEL", url=found.get("link_ggsel", ""))],
-                [InlineKeyboardButton("🔗 PLAYEROK", url=found.get("link_playerok", ""))],
-                [InlineKeyboardButton("🔗 STARVELL", url=found.get("link_starvell", ""))],
-                [InlineKeyboardButton("💬 Договориться лично", callback_data=f"contact_{prod_id}")],
-                [InlineKeyboardButton("🔙 Назад", callback_data="show_categories")]
-            ]
-            await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
         else:
             await query.edit_message_text("Товар не найден.")
 
