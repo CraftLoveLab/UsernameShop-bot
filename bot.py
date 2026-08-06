@@ -91,7 +91,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     caption=text,
                     reply_markup=InlineKeyboardMarkup(keyboard)
                 )
-                await query.delete_message()  # Удаляем старое сообщение
+                await query.delete_message()
             else:
                 await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
         else:
