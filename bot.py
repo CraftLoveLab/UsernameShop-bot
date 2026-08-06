@@ -66,7 +66,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard.append([InlineKeyboardButton("🔙 Назад к категориям", callback_data="show_categories")])
         await query.edit_message_text(f"Товары в категории «{category}»:", reply_markup=InlineKeyboardMarkup(keyboard))
 
-    # Показываем способы покупки для товара (с картинкой)
+    # Показываем способы покупки для товара
     elif data.startswith("prod_"):
         prod_id = data[5:]
         found = None
@@ -83,17 +83,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("💬 Договориться лично", callback_data=f"contact_{prod_id}")],
                 [InlineKeyboardButton("🔙 Назад к категориям", callback_data="show_categories")]
             ]
-            
-            # Если есть картинка — отправляем с фото
-            if found.get("image"):
-                await query.message.reply_photo(
-                    photo=found["image"],
-                    caption=text,
-                    reply_markup=InlineKeyboardMarkup(keyboard)
-                )
-                await query.delete_message()
-            else:
-                await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
+            await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard))
         else:
             await query.edit_message_text("Товар не найден.")
 
@@ -162,16 +152,7 @@ def main():
     application.add_handler(CallbackQueryHandler(button_handler))
 
     print("🤖 Бот запущен и готов к работе!")
-    
-    # Запускаем с увеличенными тайм-аутами (60 секунд)
-    application.run_polling(
-        allowed_updates=Update.ALL_TYPES,
-        timeout=60,
-        read_timeout=60,
-        write_timeout=60,
-        connect_timeout=60,
-        pool_timeout=60
-    )
+    application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == "__main__":
     main()
