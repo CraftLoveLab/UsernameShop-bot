@@ -162,7 +162,14 @@ def main():
     application.add_handler(CallbackQueryHandler(button_handler))
 
     print("🤖 Бот запущен и готов к работе!")
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+application.run_polling(
+    allowed_updates=Update.ALL_TYPES,
+    timeout=60,
+    read_timeout=60,
+    write_timeout=60,
+    connect_timeout=60,
+    pool_timeout=60
+)
 
 if __name__ == "__main__":
     main()
