@@ -2,6 +2,7 @@ import logging
 import json
 import os
 import re
+from datetime import datetime, timedelta
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes
 
@@ -32,7 +33,6 @@ def apply_discount(price_text, discount_percent=25):
     if discount_percent == 0:
         return price_text
     
-    # Ищем все числа с валютами
     pattern = r'([\d\s]+)\s*(₽|TON)'
     matches = re.findall(pattern, price_text)
     
@@ -41,12 +41,38 @@ def apply_discount(price_text, discount_percent=25):
         clean_num = int(num_str.replace(' ', ''))
         discounted = clean_num * (100 - discount_percent) // 100
         formatted = f"{discounted:,}".replace(',', ' ')
-        # Просто показываем новую цену и размер скидки
         result.append(f"{formatted} {currency} (скидка {discount_percent}%)")
     
     if result:
         return ' / '.join(result)
     return price_text
+
+# Функция для расчёта времени до окончания акции
+def get_time_left():
+    """Возвращает строку с оставшимся временем до окончания акции"""
+    # Дата окончания акции: 7 дней с момента запуска
+    # Можешь поменять на любую дату в формате: datetime(2026, 8, 14, 23, 59, 59)
+    end_date = datetime.now() + timedelta(days=7)
+    now = datetime.now()
+    
+    # Если акция закончилась
+    if now >= end_date:
+        return "❌ Акция завершена!"
+    
+    diff = end_date - now
+    days = diff.days
+    hours = diff.seconds // 3600
+    minutes = (diff.seconds % 3600) // 60
+    
+    parts = []
+    if days > 0:
+        parts.append(f"{days} дн")
+    if hours > 0:
+        parts.append(f"{hours} ч")
+    if minutes > 0:
+        parts.append(f"{minutes} мин")
+    
+    return " ".join(parts) if parts else "менее минуты"
 
 # Настройка логирования
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
@@ -56,22 +82,25 @@ logger = logging.getLogger(__name__)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     
-    # КРАСИВОЕ ПРИВЕТСТВИЕ С ЦЕННОСТЬЮ
+    # Получаем оставшееся время
+    time_left = get_time_left()
+    
     welcome_text = (
         f"✨ <b>Привет, {user.first_name}!</b> ✨\n\n"
         "Добро пожаловать в <b>TgUserStore</b> — твой личный каталог премиальных юзернеймов для Telegram.\n\n"
         "❓ <b>Почему юзернейм — это важно?</b>\n"
         "Юзернейм — это твой цифровой паспорт. Это первое, что видят люди, когда ты пишешь им. Это твой бренд, твоя визитка, твоё лицо в мире Telegram.\n\n"
         "🔥 <b>Примеры из жизни:</b>\n"
-        "• Юзернейм @Danbao продали за <b>$2.15млн \ 1 583 948 TON</b>\n"
-        "• @bank — за <b>$1.4млн \ 850 000 TON</b>\n"
-        "• Юзернеймы — это статус, который работает на тебя 24/7\n\n"
+        "• Юзернейм @car продали за <b>$100 000</b>\n"
+        "• @bank — за <b>$50 000</b>\n"
+        "• Короткие имена — это статус, который работает на тебя 24/7\n\n"
         "💎 <b>Почему стоит купить у нас?</b>\n"
         "• Более 60+ уникальных ников — от коротких до тематических\n"
         "• Все юзы проверены и готовы к передаче\n"
         "• Полная безопасность сделки через проверенные площадки\n"
         "• Передача юзернейма каналом — быстро и надёжно\n\n"
         "🎁 <b>🔥 НЕДЕЛЯ СКИДОК!</b>\n"
+        f"⏳ <b>Осталось:</b> {time_left}\n"
         "Скидка <b>25%</b> на ВСЕ юзернеймы! Цены уже пересчитаны.\n"
         "Успей выбрать свой идеальный ник! ⏳"
     )
@@ -92,18 +121,20 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     data = query.data
     products = load_products()
-    DISCOUNT = 25  # Скидка 25%
-
+    DISCOUNT = 25
+    
     # Показываем категории
     if data == "show_categories":
+        time_left = get_time_left()
         keyboard = []
         for cat in products.keys():
             keyboard.append([InlineKeyboardButton(f"📁 {cat}", callback_data=f"cat_{cat}")])
         keyboard.append([InlineKeyboardButton("🔙 Назад", callback_data="back_to_start")])
         
         await query.edit_message_text(
-            "📂 <b>Выбери категорию:</b>\n\n"
-            "🎁 <b>Напоминаем:</b> скидка 25% на все товары!\n"
+            f"📂 <b>Выбери категорию:</b>\n\n"
+            f"⏳ <b>Осталось времени:</b> {time_left}\n"
+            "🎁 Напоминаем: скидка <b>25%</b> на все товары!\n"
             "Цены уже пересчитаны с учётом скидки.",
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode="HTML"
@@ -115,7 +146,6 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         items = products.get(category, {})
         keyboard = []
         for prod_id, info in items.items():
-            # Применяем скидку к цене (без зачёркивания)
             original_price = info['price']
             discounted_price = apply_discount(original_price, DISCOUNT)
             button_text = f"{info['name']} — {discounted_price}"
@@ -139,7 +169,6 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 found = items[prod_id]
                 break
         if found:
-            # Применяем скидку (без зачёркивания)
             original_price = found['price']
             discounted_price = apply_discount(original_price, DISCOUNT)
             
