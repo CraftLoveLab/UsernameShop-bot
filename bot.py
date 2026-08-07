@@ -49,6 +49,30 @@ def apply_discount(price_text, discount_percent=25):
 
 # Функция для расчёта времени до окончания акции
 def get_time_left():
+    """Возвращает строку с оставшимся временем до окончания акции (реальное время)"""
+    # Задаём конкретную дату и время окончания акции
+    # Например: 14 августа 2026 года, 23:59:59
+    end_date = datetime(2026, 8, 14, 6, 0, 0)
+    now = datetime.now()
+    
+    # Если акция закончилась
+    if now >= end_date:
+        return "❌ Акция завершена!"
+    
+    diff = end_date - now
+    days = diff.days
+    hours = diff.seconds // 3600
+    minutes = (diff.seconds % 3600) // 60
+    
+    parts = []
+    if days > 0:
+        parts.append(f"{days} дн")
+    if hours > 0:
+        parts.append(f"{hours} ч")
+    if minutes > 0:
+        parts.append(f"{minutes} мин")
+    
+    return " ".join(parts) if parts else "менее минуты"
     """Возвращает строку с оставшимся временем до окончания акции"""
     # Дата окончания акции: 7 дней с момента запуска
     # Можешь поменять на любую дату в формате: datetime(2026, 8, 14, 23, 59, 59)
