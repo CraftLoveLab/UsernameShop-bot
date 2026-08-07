@@ -26,9 +26,9 @@ def load_products():
         print("❌ Файл products.json не найден!")
         return {}
 
-# Применяем скидку к цене
+# Применяем скидку к цене (БЕЗ ЗАЧЁРКИВАНИЯ)
 def apply_discount(price_text, discount_percent=25):
-    """Применяет скидку к строке цены (рубли и TON)"""
+    """Применяет скидку к строке цены (рубли и TON) — показывает новую цену и размер скидки"""
     if discount_percent == 0:
         return price_text
     
@@ -41,8 +41,8 @@ def apply_discount(price_text, discount_percent=25):
         clean_num = int(num_str.replace(' ', ''))
         discounted = clean_num * (100 - discount_percent) // 100
         formatted = f"{discounted:,}".replace(',', ' ')
-        # Зачёркиваем старую цену, показываем новую
-        result.append(f"~~{clean_num:,}~~ {formatted} {currency}".replace(',', ' '))
+        # Просто показываем новую цену и размер скидки
+        result.append(f"{formatted} {currency} (скидка {discount_percent}%)")
     
     if result:
         return ' / '.join(result)
@@ -101,7 +101,6 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             keyboard.append([InlineKeyboardButton(f"📁 {cat}", callback_data=f"cat_{cat}")])
         keyboard.append([InlineKeyboardButton("🔙 Назад", callback_data="back_to_start")])
         
-        # Сообщение о скидке перед категориями
         await query.edit_message_text(
             "📂 <b>Выбери категорию:</b>\n\n"
             "🎁 <b>Напоминаем:</b> скидка 25% на все товары!\n"
@@ -116,7 +115,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         items = products.get(category, {})
         keyboard = []
         for prod_id, info in items.items():
-            # Применяем скидку к цене
+            # Применяем скидку к цене (без зачёркивания)
             original_price = info['price']
             discounted_price = apply_discount(original_price, DISCOUNT)
             button_text = f"{info['name']} — {discounted_price}"
@@ -140,7 +139,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 found = items[prod_id]
                 break
         if found:
-            # Применяем скидку
+            # Применяем скидку (без зачёркивания)
             original_price = found['price']
             discounted_price = apply_discount(original_price, DISCOUNT)
             
