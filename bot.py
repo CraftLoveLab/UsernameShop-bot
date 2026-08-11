@@ -7,6 +7,40 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes, MessageHandler, filters
 
 from stats_storage import increment_views, init_stats, load_stats
+from collections import defaultdict
+from datetime import datetime, timedelta
+
+# Хранилище для попыток входа
+login_attempts = defaultdict(list)
+
+def check_login_attempt(user_id: int, max_attempts: int = 5, cooldown_minutes: int = 15) -> tuple[bool, int]:
+    """
+    Проверяет, может ли пользователь пытаться войти.
+    Возвращает: (разрешено ли, сколько попыток осталось)
+    """
+    now = datetime.now()
+    cooldown = timedelta(minutes=cooldown_minutes)
+    
+    # Удаляем старые попытки (старше cooldown)
+    login_attempts[user_id] = [
+        attempt_time for attempt_time in login_attempts[user_id]
+        if now - attempt_time < cooldown
+    ]
+    
+    attempts_left = max_attempts - len(login_attempts[user_id])
+    
+    if attempts_left <= 0:
+        return False, 0
+    
+    return True, attempts_left
+
+def record_failed_attempt(user_id: int):
+    """Записывает неудачную попытку входа"""
+    login_attempts[user_id].append(datetime.now())
+
+def clear_attempts(user_id: int):
+    """Очищает попытки после успешного входа"""
+    login_attempts[user_id] = []
 
 # ========== НАСТРОЙКИ ==========
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
@@ -256,14 +290,52 @@ async def admin_handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
     username = update.effective_user.username or update.effective_user.first_name
 
-    # Если мы ждём пароль
+        # Если мы ждём пароль
     if context.user_data.get('admin_waiting_password'):
+        user_id = update.effective_user.id
+        
+        # Проверяем, не заблокирован ли пользователь
+        can_try, attempts_left = check_login_attempt(user_id)
+        if not can_try:
+            await update.message.reply_text(
+                f"🚫 Слишком много попыток! Подождите 15 минут.\n"
+                f"Или используйте /admin снова позже."
+            )
+            context.user_data.pop('admin_waiting_password', None)
+            return
+        
         if text == ADMIN_PASSWORD:
+            # Успешный вход
+            clear_attempts(user_id)
             context.user_data['admin_waiting_password'] = False
             context.user_data['admin_authenticated'] = True
+            log_admin_action("login", "Успешный вход в админ-панель", username)
             await show_admin_menu(update, context)
         else:
-            await update.message.reply_text("❌ Неверный пароль. Попробуйте /admin")
+            # Неудачная попытка
+            record_failed_attempt(user_id)
+            can_try, attempts_left = check_login_attempt(user_id)
+            
+            if attempts_left > 0:
+                await update.message.reply_text(
+                    f"❌ Неверный пароль. Осталось попыток: {attempts_left}"
+                )
+            else:
+                await update.message.reply_text(
+                    f"🚫 Слишком много неудачных попыток!\n"
+                    f"Доступ заблокирован на 15 минут."
+                )
+                context.user_data.pop('admin_waiting_password', None)
+                
+                # Уведомляем админа о попытке взлома
+                await context.bot.send_message(
+                    chat_id=ADMIN_CHAT_ID,
+                    text=f"⚠️ Попытка взлома админки!\n"
+                         f"User ID: {user_id}\n"
+                         f"Username: {username}\n"
+                         f"Время: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+                    parse_mode="HTML"
+                )
         return
 
     # Если не авторизован — выходим
