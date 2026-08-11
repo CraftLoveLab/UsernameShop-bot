@@ -553,12 +553,11 @@ def main():
     # Обработчик текстовых сообщений (для пароля и шагов)
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, admin_handle_text))
 
-    # Обработчики кнопок
-    application.add_handler(CallbackQueryHandler(button_handler))
+    # ВАЖНО: админский обработчик кнопок должен быть ПЕРВЫМ
     application.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|add_cat_|del_|edit_)"))
+    
+    # Основной обработчик кнопок (для магазина) — после админского
+    application.add_handler(CallbackQueryHandler(button_handler))
 
     print("🤖 Бот запущен и готов к работе!")
     application.run_polling(allowed_updates=Update.ALL_TYPES)
-
-if __name__ == "__main__":
-    main()
