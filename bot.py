@@ -4,7 +4,7 @@ import os
 import re
 from datetime import datetime
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
+from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes, MessageHandler, filters
 
 from stats_storage import increment_views, init_stats, load_stats
 
@@ -12,7 +12,7 @@ from stats_storage import increment_views, init_stats, load_stats
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 ADMIN_CHAT_ID = os.environ.get("ADMIN_CHAT_ID")
 CONTACT_USERNAME = os.environ.get("CONTACT_USERNAME")
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "admin123")  # если не задан, то дефолтный (НО ЛУЧШЕ ЗАДАТЬ В ПЕРЕМЕННЫХ!)
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "admin123")  # если не задан — дефолтный
 
 if not BOT_TOKEN or not ADMIN_CHAT_ID or not CONTACT_USERNAME:
     print("❌ Ошибка: не заданы переменные окружения BOT_TOKEN, ADMIN_CHAT_ID, CONTACT_USERNAME")
@@ -34,7 +34,6 @@ def save_products(products):
     with open("products.json", "w", encoding="utf-8") as f:
         json.dump(products, f, ensure_ascii=False, indent=2)
 
-# Логирование админ-действий
 def log_admin_action(action, details, username="Неизвестный"):
     try:
         with open("admin_log.json", "r", encoding="utf-8") as f:
@@ -50,7 +49,6 @@ def log_admin_action(action, details, username="Неизвестный"):
     with open("admin_log.json", "w", encoding="utf-8") as f:
         json.dump(logs, f, ensure_ascii=False, indent=2)
 
-# Получить следующий ID для категории
 def get_next_id(category):
     prefix_map = {
         "Обычные": "user",
@@ -101,7 +99,7 @@ def get_time_left():
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ========== ОБРАБОТЧИКИ КОМАНД ==========
+# ========== ОСНОВНЫЕ ОБРАБОТЧИКИ ==========
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     time_left = get_time_left()
@@ -241,58 +239,156 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await start(update, context)
 
 # ================================================================
-# ========== АДМИН-ПАНЕЛЬ (ЗАЩИТА ПАРОЛЕМ + ЛОГИ) ==========
+# ========== АДМИН-ПАНЕЛЬ (упрощённая, без ConversationHandler) =
 # ================================================================
 
-# Состояния для ConversationHandler
-(PASSWORD, ADMIN_MENU, ADD_CATEGORY, ADD_ID, ADD_NAME, ADD_PRICE, ADD_GG, ADD_PLAYEROK, ADD_STARVELL, REMOVE_ID, EDIT_ID, EDIT_NEW_PRICE) = range(12)
+# Состояние для хранения шага добавления
+admin_steps = {}
 
 async def admin_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Запрашиваем пароль для входа в админку"""
-    await update.message.reply_text("🔐 Введите пароль для входа в админ-панель:\n(или /cancel для отмены)")
-    return PASSWORD
+    await update.message.reply_text("🔐 Введите пароль для входа в админ-панель:")
+    context.user_data['admin_waiting_password'] = True
 
-async def admin_check_password(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Проверка пароля"""
-    password = update.message.text
-    if password == ADMIN_PASSWORD:
-        context.user_data['admin_authenticated'] = True
+async def admin_handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Обработка текстовых сообщений для админ-панели"""
+    user_id = update.effective_user.id
+    text = update.message.text
+    username = update.effective_user.username or update.effective_user.first_name
+
+    # Если мы ждём пароль
+    if context.user_data.get('admin_waiting_password'):
+        if text == ADMIN_PASSWORD:
+            context.user_data['admin_waiting_password'] = False
+            context.user_data['admin_authenticated'] = True
+            await show_admin_menu(update, context)
+        else:
+            await update.message.reply_text("❌ Неверный пароль. Попробуйте /admin")
+        return
+
+    # Если не авторизован — выходим
+    if not context.user_data.get('admin_authenticated'):
+        await update.message.reply_text("⛔ Доступ запрещён. Введите /admin")
+        return
+
+    # Обработка пошаговых действий
+    step = context.user_data.get('admin_step')
+
+    if step == 'add_wait_id':
+        pid = text.strip()
+        products = load_products()
+        for cat, items in products.items():
+            if pid in items:
+                await update.message.reply_text("❌ Товар с таким ID уже существует. Введите другой ID или /cancel")
+                return
+        context.user_data['admin_new_id'] = pid
+        context.user_data['admin_step'] = 'add_wait_name'
+        await update.message.reply_text("Введите название товара (например, @Test):")
+        return
+
+    if step == 'add_wait_name':
+        name = text.strip()
+        context.user_data['admin_new_name'] = name
+        context.user_data['admin_step'] = 'add_wait_price'
+        await update.message.reply_text("Введите цену (например, '1000 ₽ / 8 TON'):")
+        return
+
+    if step == 'add_wait_price':
+        price = text.strip()
+        context.user_data['admin_new_price'] = price
+        context.user_data['admin_step'] = 'add_wait_gg'
+        await update.message.reply_text("Введите ссылку GGSEL (или '-' если нет):")
+        return
+
+    if step == 'add_wait_gg':
+        gg = text.strip()
+        if gg == '-':
+            gg = ""
+        context.user_data['admin_new_gg'] = gg
+        context.user_data['admin_step'] = 'add_wait_playerok'
+        await update.message.reply_text("Введите ссылку PLAYEROK (или '-' если нет):")
+        return
+
+    if step == 'add_wait_playerok':
+        playerok = text.strip()
+        if playerok == '-':
+            playerok = ""
+        context.user_data['admin_new_playerok'] = playerok
+        context.user_data['admin_step'] = 'add_wait_starvell'
+        await update.message.reply_text("Введите ссылку STARVELL (или '-' если нет):")
+        return
+
+    if step == 'add_wait_starvell':
+        starvell = text.strip()
+        if starvell == '-':
+            starvell = ""
+
+        # Собираем товар
+        category = context.user_data.get('admin_add_category')
+        pid = context.user_data.get('admin_new_id')
+        name = context.user_data.get('admin_new_name')
+        price = context.user_data.get('admin_new_price')
+        gg = context.user_data.get('admin_new_gg')
+        playerok = context.user_data.get('admin_new_playerok')
+
+        products = load_products()
+        if category not in products:
+            products[category] = {}
+        products[category][pid] = {
+            "name": name,
+            "price": price,
+            "link_ggsel": gg,
+            "link_playerok": playerok,
+            "link_starvell": starvell
+        }
+        save_products(products)
+        log_admin_action("add", f"Добавлен товар {name} (ID: {pid}) в категорию {category}", username)
+
+        # очищаем временные данные
+        context.user_data.pop('admin_step', None)
+        context.user_data.pop('admin_add_category', None)
+        context.user_data.pop('admin_new_id', None)
+        context.user_data.pop('admin_new_name', None)
+        context.user_data.pop('admin_new_price', None)
+        context.user_data.pop('admin_new_gg', None)
+        context.user_data.pop('admin_new_playerok', None)
+        context.user_data.pop('admin_new_starvell', None)
+
+        await update.message.reply_text(f"✅ Товар {name} добавлен в категорию {category}!")
         await show_admin_menu(update, context)
-        return ADMIN_MENU
-    else:
-        await update.message.reply_text("❌ Неверный пароль. Попробуйте снова /admin")
-        return ConversationHandler.END
+        return
 
-async def show_admin_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Показывает главное меню админки (через редактирование или новое сообщение)"""
-    keyboard = [
-        [InlineKeyboardButton("➕ Добавить товар", callback_data="admin_add")],
-        [InlineKeyboardButton("➖ Удалить товар", callback_data="admin_remove")],
-        [InlineKeyboardButton("✏️ Изменить цену", callback_data="admin_edit")],
-        [InlineKeyboardButton("📊 Статистика", callback_data="admin_stats")],
-        [InlineKeyboardButton("📜 История действий", callback_data="admin_logs")],
-        [InlineKeyboardButton("❌ Закрыть админку", callback_data="admin_close")]
-    ]
-    if update.callback_query:
-        await update.callback_query.edit_message_text(
-            "🛠 <b>Админ-панель</b>\nВыберите действие:",
-            reply_markup=InlineKeyboardMarkup(keyboard),
-            parse_mode="HTML"
-        )
-    else:
-        await update.message.reply_text(
-            "🛠 <b>Админ-панель</b>\nВыберите действие:",
-            reply_markup=InlineKeyboardMarkup(keyboard),
-            parse_mode="HTML"
-        )
+    if step == 'edit_wait_price':
+        pid = context.user_data.get('admin_edit_id')
+        new_price = text.strip()
+        products = load_products()
+        found = False
+        for cat, items in products.items():
+            if pid in items:
+                items[pid]['price'] = new_price
+                found = True
+                log_admin_action("edit", f"Изменена цена товара {items[pid]['name']} (ID: {pid}) на {new_price}", username)
+                break
+        if found:
+            save_products(products)
+            await update.message.reply_text(f"✅ Цена для {pid} обновлена на {new_price}")
+        else:
+            await update.message.reply_text("❌ Товар не найден.")
+        context.user_data.pop('admin_step', None)
+        context.user_data.pop('admin_edit_id', None)
+        await show_admin_menu(update, context)
+        return
+
+    # Если ничего не подошло
+    await update.message.reply_text("ℹ️ Используйте кнопки меню или /cancel")
 
 async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Обработка нажатий кнопок в админ-меню"""
     query = update.callback_query
     await query.answer()
     data = query.data
-    user = update.effective_user
-    username = user.username or user.first_name
+    user_id = update.effective_user.id
+    username = update.effective_user.username or update.effective_user.first_name
 
     if not context.user_data.get('admin_authenticated'):
         await query.edit_message_text("⛔ Доступ запрещён. Введите /admin")
@@ -314,16 +410,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text(
             f"Категория: <b>{category}</b>\n"
             f"Следующий ID: <code>{next_id}</code>\n\n"
-            "Введите ID для нового товара (например, user45, garant13, crypto23):\n"
-            "или /cancel для отмены",
+            "Введите ID для нового товара (например, user45, garant13, crypto23):",
             parse_mode="HTML"
         )
-        context.user_data['admin_action'] = 'add_wait_id'
-        context.user_data['admin_step'] = 'add_id'
+        context.user_data['admin_step'] = 'add_wait_id'
         return
 
     if data == "admin_remove":
-        # покажем список товаров для выбора
         products = load_products()
         keyboard = []
         for cat, items in products.items():
@@ -355,7 +448,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         return
 
     if data == "admin_edit":
-        # покажем список товаров для выбора цены
         products = load_products()
         keyboard = []
         for cat, items in products.items():
@@ -368,11 +460,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     if data.startswith("edit_"):
         pid = data[5:]
         context.user_data['admin_edit_id'] = pid
+        context.user_data['admin_step'] = 'edit_wait_price'
         await query.edit_message_text(
-            f"Введите новую цену для товара (в формате 'X ₽ / Y TON', например '1500 ₽ / 13 TON'):\n"
-            "или /cancel для отмены"
+            "Введите новую цену для товара (в формате 'X ₽ / Y TON', например '1500 ₽ / 13 TON'):"
         )
-        context.user_data['admin_action'] = 'edit_wait_price'
         return
 
     if data == "admin_stats":
@@ -404,7 +495,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             await query.edit_message_text("📜 История действий пуста.")
             await show_admin_menu(update, context)
             return
-        last_10 = logs[-10:][::-1]  # последние 10
+        last_10 = logs[-10:][::-1]
         msg = "📜 <b>Последние действия:</b>\n\n"
         for log in last_10:
             msg += f"• {log['time']} — {log['user']}: {log['details']}\n"
@@ -418,135 +509,35 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     if data == "admin_close":
         context.user_data.pop('admin_authenticated', None)
-        context.user_data.pop('admin_action', None)
         context.user_data.pop('admin_step', None)
         await query.edit_message_text("🔒 Админ-панель закрыта.")
         return
 
-# Обработка текстовых сообщений в процессе добавления/редактирования
-async def admin_text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text = update.message.text
-    user = update.effective_user
-    username = user.username or user.first_name
+async def show_admin_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Показывает главное меню админки"""
+    keyboard = [
+        [InlineKeyboardButton("➕ Добавить товар", callback_data="admin_add")],
+        [InlineKeyboardButton("➖ Удалить товар", callback_data="admin_remove")],
+        [InlineKeyboardButton("✏️ Изменить цену", callback_data="admin_edit")],
+        [InlineKeyboardButton("📊 Статистика", callback_data="admin_stats")],
+        [InlineKeyboardButton("📜 История действий", callback_data="admin_logs")],
+        [InlineKeyboardButton("❌ Закрыть админку", callback_data="admin_close")]
+    ]
+    if update.callback_query:
+        await update.callback_query.edit_message_text(
+            "🛠 <b>Админ-панель</b>\nВыберите действие:",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode="HTML"
+        )
+    else:
+        await update.message.reply_text(
+            "🛠 <b>Админ-панель</b>\nВыберите действие:",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode="HTML"
+        )
 
-    if not context.user_data.get('admin_authenticated'):
-        await update.message.reply_text("⛔ Доступ запрещён. Введите /admin")
-        return
-
-    action = context.user_data.get('admin_action')
-
-    # Добавление товара — шаг ввода ID
-    if action == 'add_wait_id':
-        pid = text.strip()
-        # проверка на уникальность
-        products = load_products()
-        for cat, items in products.items():
-            if pid in items:
-                await update.message.reply_text("❌ Товар с таким ID уже существует. Введите другой ID или /cancel")
-                return
-        context.user_data['admin_new_id'] = pid
-        await update.message.reply_text("Введите название товара (например, @Test):")
-        context.user_data['admin_action'] = 'add_wait_name'
-        context.user_data['admin_step'] = 'add_name'
-        return
-
-    if action == 'add_wait_name':
-        name = text.strip()
-        context.user_data['admin_new_name'] = name
-        await update.message.reply_text("Введите цену (например, '1000 ₽ / 8 TON'):")
-        context.user_data['admin_action'] = 'add_wait_price'
-        context.user_data['admin_step'] = 'add_price'
-        return
-
-    if action == 'add_wait_price':
-        price = text.strip()
-        # простая проверка формата (можно доработать)
-        context.user_data['admin_new_price'] = price
-        await update.message.reply_text("Введите ссылку GGSEL (или '-' если нет):")
-        context.user_data['admin_action'] = 'add_wait_gg'
-        context.user_data['admin_step'] = 'add_gg'
-        return
-
-    if action == 'add_wait_gg':
-        gg = text.strip()
-        if gg == '-':
-            gg = ""
-        context.user_data['admin_new_gg'] = gg
-        await update.message.reply_text("Введите ссылку PLAYEROK (или '-' если нет):")
-        context.user_data['admin_action'] = 'add_wait_playerok'
-        context.user_data['admin_step'] = 'add_playerok'
-        return
-
-    if action == 'add_wait_playerok':
-        playerok = text.strip()
-        if playerok == '-':
-            playerok = ""
-        context.user_data['admin_new_playerok'] = playerok
-        await update.message.reply_text("Введите ссылку STARVELL (или '-' если нет):")
-        context.user_data['admin_action'] = 'add_wait_starvell'
-        context.user_data['admin_step'] = 'add_starvell'
-        return
-
-    if action == 'add_wait_starvell':
-        starvell = text.strip()
-        if starvell == '-':
-            starvell = ""
-
-        # Собираем товар
-        category = context.user_data.get('admin_add_category')
-        pid = context.user_data.get('admin_new_id')
-        name = context.user_data.get('admin_new_name')
-        price = context.user_data.get('admin_new_price')
-        gg = context.user_data.get('admin_new_gg')
-        playerok = context.user_data.get('admin_new_playerok')
-
-        products = load_products()
-        if category not in products:
-            products[category] = {}
-        products[category][pid] = {
-            "name": name,
-            "price": price,
-            "link_ggsel": gg,
-            "link_playerok": playerok,
-            "link_starvell": starvell
-        }
-        save_products(products)
-        log_admin_action("add", f"Добавлен товар {name} (ID: {pid}) в категорию {category}", username)
-
-        # очищаем временные данные
-        for key in ['admin_add_category', 'admin_new_id', 'admin_new_name', 'admin_new_price', 'admin_new_gg', 'admin_new_playerok', 'admin_new_starvell']:
-            context.user_data.pop(key, None)
-        context.user_data.pop('admin_action', None)
-        context.user_data.pop('admin_step', None)
-
-        await update.message.reply_text(f"✅ Товар {name} добавлен в категорию {category}!")
-        await show_admin_menu(update, context)
-        return
-
-    # Редактирование цены
-    if action == 'edit_wait_price':
-        pid = context.user_data.get('admin_edit_id')
-        new_price = text.strip()
-        products = load_products()
-        found = False
-        for cat, items in products.items():
-            if pid in items:
-                items[pid]['price'] = new_price
-                found = True
-                log_admin_action("edit", f"Изменена цена товара {items[pid]['name']} (ID: {pid}) на {new_price}", username)
-                break
-        if found:
-            save_products(products)
-            await update.message.reply_text(f"✅ Цена для {pid} обновлена на {new_price}")
-        else:
-            await update.message.reply_text("❌ Товар не найден.")
-        context.user_data.pop('admin_action', None)
-        context.user_data.pop('admin_edit_id', None)
-        await show_admin_menu(update, context)
-        return
-
-# Отмена операции
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Отмена операции"""
     context.user_data.clear()
     await update.message.reply_text("✅ Операция отменена.")
 
@@ -557,30 +548,14 @@ def main():
     # Основные хендлеры
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("admin", admin_start))
+    application.add_handler(CommandHandler("cancel", cancel))
 
-    # ConversationHandler для админ-входа по паролю
-    conv_handler = ConversationHandler(
-        entry_points=[CommandHandler("admin", admin_start)],
-        states={
-            PASSWORD: [MessageHandler(filters.TEXT & ~filters.COMMAND, admin_check_password)],
-            ADMIN_MENU: [CallbackQueryHandler(admin_callback_handler)]
-        },
-        fallbacks=[CommandHandler("cancel", cancel)]
-    )
-    application.add_handler(conv_handler)
+    # Обработчик текстовых сообщений (для пароля и шагов)
+    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, admin_handle_text))
 
-    # Обработчики кнопок (для меню и действий)
-    application.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^admin_"))
-    application.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^add_cat_"))
-    application.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^del_"))
-    application.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^edit_"))
+    # Обработчики кнопок
     application.add_handler(CallbackQueryHandler(button_handler))
-
-    # Обработчик текста для админ-шагов (добавление, редактирование)
-    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, admin_text_handler))
-
-    # Остальные хендлеры
-    application.add_handler(CallbackQueryHandler(button_handler))
+    application.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|add_cat_|del_|edit_)"))
 
     print("🤖 Бот запущен и готов к работе!")
     application.run_polling(allowed_updates=Update.ALL_TYPES)
