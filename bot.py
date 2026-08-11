@@ -6,6 +6,8 @@ from datetime import datetime
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes
 
+from stats_storage import increment_views, init_stats, load_stats
+
 # ========== НАСТРОЙКИ ==========
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 ADMIN_CHAT_ID = os.environ.get("ADMIN_CHAT_ID")
@@ -26,29 +28,6 @@ def load_products():
     except FileNotFoundError:
         print("❌ Файл products.json не найден!")
         return {}
-
-# Загружаем статистику просмотров
-def load_stats():
-    try:
-        with open("stats.json", "r", encoding="utf-8") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {}
-
-# Сохраняем статистику
-def save_stats(stats):
-    with open("stats.json", "w", encoding="utf-8") as f:
-        json.dump(stats, f, ensure_ascii=False, indent=4)
-
-# Увеличиваем счётчик просмотров
-def increment_views(product_id):
-    stats = load_stats()
-    if product_id in stats:
-        stats[product_id] += 1
-    else:
-        stats[product_id] = 1
-    save_stats(stats)
-    return stats[product_id]
 
 # Применяем скидку
 def apply_discount(price_text, discount_percent=25):
@@ -226,6 +205,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await start(update, context)
 
 def main():
+    init_stats()
     application = Application.builder().token(BOT_TOKEN).build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CallbackQueryHandler(button_handler))
