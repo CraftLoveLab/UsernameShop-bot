@@ -42,6 +42,13 @@
       "link_playerok": "https://playerok.com/products/bb2761fd4e76-prodam-yuzerneym-tradertitle-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/e7a6af1d-2ada-498f-a48b-11e68855ab10"
     },
+    "user30": {
+      "name": "@AlphaTitle",
+      "price": "7 999 ₽ / 68 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/ee304605d9e9-prodam-yuzerneym-alphatitle-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/d5371429-e870-4162-8a1f-b989b8ebe47b"
+    },
     "user7": {
       "name": "@JadeHat",
       "price": "10 999 ₽ / 93 TON",
@@ -439,11 +446,18 @@
       "link_starvell": "https://starvell.com/offers/4e980eea-73c2-46cf-a8a8-1a42d78005fb"
     },
     "crypto21": {
-      "name": "@ton173",
+      "name": "@ton363",
       "price": "2 299 ₽ / 19 TON",
       "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/28cfdeed5cb0-prodam-yuzerneym-ton173-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/f9a5722b-22d3-4f3a-8a14-088dda14b595"
+    },
+    "crypto25": {
+      "name": "@crypto424",
+      "price": "7 899 ₽ / 67 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/41adeee1838b-prodam-yuzerneym-mrtehb-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/6da6a793-cd9b-44b1-aa4f-771f7b352de3"
     },
     "crypto22": {
       "name": "@DealerOfCoins",
