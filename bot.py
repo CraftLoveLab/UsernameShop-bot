@@ -21,7 +21,7 @@ if not BOT_TOKEN or not ADMIN_CHAT_ID or not CONTACT_USERNAME:
 ADMIN_CHAT_ID = int(ADMIN_CHAT_ID)
 # =================================
 
-# ========== РАБОТА С ЯЗЫКОМ ==========
+# ========== РАБОТА С ЯЗЫКОМ (с принудительной записью) ==========
 LANG_FILE = "user_lang.json"
 
 def _ensure_lang_file():
@@ -55,8 +55,10 @@ def set_user_lang(user_id, lang):
         with open(LANG_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         print(f"✅ Язык для {user_id} сохранён: {lang}")
+        return True
     except Exception as e:
         print(f"❌ Ошибка записи user_lang.json: {e}")
+        return False
 
 # ========== ПЕРЕВОДЫ (сокращённо) ==========
 TRANSLATIONS = {
@@ -258,8 +260,10 @@ async def lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     lang = query.data.split('_')[1]
     user_id = update.effective_user.id
-    set_user_lang(user_id, lang)
-    print(f"🟢 lang_callback: user_id={user_id}, lang={lang} сохранён")
+    # Принудительно сохраняем язык
+    success = set_user_lang(user_id, lang)
+    print(f"🟢 lang_callback: user_id={user_id}, lang={lang}, success={success}")
+    # Показываем приветствие независимо от результата
     await show_welcome(update, context, lang)
 
 async def show_welcome(update: Update, context: ContextTypes.DEFAULT_TYPE, lang):
@@ -715,7 +719,8 @@ def main():
     application.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|add_cat_|del_|edit_)"))
 
     print("🤖 Бот запущен и готов к работе!")
-    application.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
+    # Убрал drop_pending_updates, так как он может вызывать конфликты
+    application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == "__main__":
     main()
