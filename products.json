@@ -1,484 +1,619 @@
 {
   "Обычные": {
     "user1": {
-      "name": "@ApexCC",
-      "price": "3 199 ₽ / 27 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/20372debcdfa-prodam-yuzerneym-apexcc-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/a636de8e-5b57-4384-b69e-d12bcead7d80"
+      "name": "@Ufnor",
+      "price": "499 ₽ / 4 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/f8c1ae04b7ef-prodam-yuzerneym-ufnor-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/604effba-fcad-421e-bf0e-221fae4b34fc"
     },
     "user2": {
-      "name": "@ApexGG",
-      "price": "4 299 ₽ / 36 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/c73b15217889-prodam-yuzerneym-apexgg-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/116df7e6-5c53-4c43-b76e-a50b5664f6e1"
+      "name": "@Ufnon",
+      "price": "499 ₽ / 4 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/0a5e764ed02e-prodam-yuzerneym-ufnon-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/a42739fe-1d75-4f0d-9aa3-775a5b50e4b7"
     },
     "user3": {
-      "name": "@ApexJJ",
-      "price": "1 799 ₽ / 15 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/445330abc486-prodam-yuzerneym-apexjj-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/619562ef-1896-4cea-b8c2-64dfb9844436"
+      "name": "@Ufsar",
+      "price": "499 ₽ / 4 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/c433014d1530-prodam-yuzerneym-ufsar-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/ebebbaf1-e9db-4451-96a4-6afd505df986"
     },
     "user4": {
-      "name": "@ApexHH",
-      "price": "3 998 ₽ / 34 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/cc8d9b2ce295-prodam-yuzerneym-apexhh-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/2d12ff5b-89d2-40e9-b15e-1f8139bbad6a"
-    },
-    "user5": {
-      "name": "@DiamondHat",
-      "price": "4 499 ₽ / 38 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/7382e97dbe1a-prodam-yuzerneym-diamondhat-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/c7245689-ffb3-4d1e-8766-90a2160f1c6c"
-    },
-    "user6": {
-      "name": "@TraderTitle",
-      "price": "6 499 ₽ / 55 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/bb2761fd4e76-prodam-yuzerneym-tradertitle-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/e7a6af1d-2ada-498f-a48b-11e68855ab10"
-    },
-    "user7": {
-      "name": "@JadeHat",
-      "price": "3 799 ₽ / 32 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/e42728f482bb-prodam-yuzerneym-jadehat-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/06a7f8a2-185e-4fcf-8887-ad121bef4fe2"
-    },
-    "user8": {
-      "name": "@PrimeTitle",
-      "price": "4 999 ₽ / 42 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/edde2f3e63cc-prodam-yuzerneym-primetitle-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/797efb10-5747-4a62-a3de-66ff5374258b"
-    },
-    "user9": {
-      "name": "@SmartTitle",
-      "price": "4 999 ₽ / 42 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/7e168b3dffc2-prodam-yuzerneym-smarttitle-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/b63f2c12-0d2f-4afd-961c-b3bdb1eedbc0"
-    },
-    "user10": {
-      "name": "@MasterTitle",
-      "price": "4 999 ₽ / 42 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/987f55ae0dea-prodam-yuzerneym-mastertitle-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/82cc9f2c-c6a8-409c-854b-4dc0a8f26ed6"
-    },
-    "user11": {
-      "name": "@ddos70",
-      "price": "749 ₽ / 6 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/d0831cc8655c-prodam-yuzerneym-ddos70-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/44cec98e-7f98-4ac4-90f5-06c1c4fb6625"
-    },
-    "user12": {
-      "name": "@MrTEHb",
-      "price": "1 199 ₽ / 10 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/41adeee1838b-prodam-yuzerneym-mrtehb-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/6da6a793-cd9b-44b1-aa4f-771f7b352de3"
-    },
-    "user13": {
-      "name": "@cmc33",
-      "price": "6 999 ₽ / 59 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/d57262a400ee-prodam-yuzerneym-cmc33-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/b7ff688b-e35d-4a05-ac6a-3ecc67193914"
-    },
-    "user14": {
-      "name": "@UserEblana",
-      "price": "1 499 ₽ / 13 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/0617fd34b95b-prodam-yuzerneym-usereblana-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/d044c6ae-09f9-42a9-bb40-5f0348209182"
-    },
-    "user15": {
-      "name": "@E0019",
+      "name": "@EOO19",
       "price": "699 ₽ / 6 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/ced98814bb68-prodam-yuzerneym-e0019-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/09a22dff-1c4f-4042-b8a3-701b062b82cc"
     },
-    "user16": {
-      "name": "@A0949",
+    "user5": {
+      "name": "@DOO13",
       "price": "699 ₽ / 6 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/b5c35802fd05-prodam-yuzerneym-a0949-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/e439fe4c-9018-4bf6-8a0a-1c1b9d5a0922"
-    },
-    "user17": {
-      "name": "@GigaBusiness",
-      "price": "2 999 ₽ / 25 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/56a16f1a55e2-prodam-yuzerneym-gigabusiness-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/0a675b5d-9e46-4e32-9e94-f542423c472e"
-    },
-    "user18": {
-      "name": "@MegaTrueAdam",
-      "price": "2 999 ₽ / 25 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/dbccae497949-prodam-yuzerneym-megatrueadam-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/8cd56554-53dd-49da-8938-687960648ff8"
-    },
-    "user19": {
-      "name": "@RealAnimeshnik",
-      "price": "1 299 ₽ / 11 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/d8aa8f0657f7-prodam-yuzerneym-realanimeshnik-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/0a645e79-8268-4e02-b883-5ce723ca9e11"
-    },
-    "user20": {
-      "name": "@UslugaBoard",
-      "price": "4 699 ₽ / 40 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/6ac60bcfb34c-prodam-yuzerneym-uslugaboard-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/f2df0922-99d6-4ba6-baa4-e6821c59f59a"
-    },
-    "user21": {
-      "name": "@MrPupsik",
-      "price": "1 899 ₽ / 16 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/cf3bc09f55cc-prodam-yuzerneym-mrpupsik-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/73b23419-d834-40db-aa6d-c4ef58101eb8"
-    },
-    "user22": {
-      "name": "@MuseumHub",
-      "price": "2 699 ₽ / 23 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/7f463f5754ff-prodam-yuzerneym-museumhub-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/65a8e023-81e0-4d87-9766-298ce240c633"
-    },
-    "user23": {
-      "name": "@WorkSpaceHub",
-      "price": "2 799 ₽ / 24 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/4c1d8110aa5b-prodam-yuzerneym-workspacehub-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/44904985-51ed-425e-ac1a-832bd80a10d0"
-    },
-    "user24": {
-      "name": "@C0700",
-      "price": "699 ₽ / 6 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/83f08c4764cd-prodam-yuzerneym-c0700-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/f2cc8c63-1c66-4670-a4f4-10721d06ff32"
-    },
-    "user25": {
-      "name": "@SosiWomen",
-      "price": "2 999 ₽ / 25 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/7a2fcc03e37e-prodam-yuzerneym-sosiwomen-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/ad77728d-b70b-4fc2-800d-33f1d056102b"
-    },
-    "user26": {
-      "name": "@HackerScary",
-      "price": "2 599 ₽ / 22 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/dffc7620c789-prodam-yuzerneym-hackerscary-dlya-telegram-opisanie-strashnyy-haker",
-      "link_starvell": "https://starvell.com/offers/2f6fa067-1882-428f-9804-62f114233b95"
-    },
-    "user27": {
-      "name": "@ClanHackerov",
-      "price": "3 499 ₽ / 30 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/3d3ce8a0c93e-prodam-yuzerneym-clanhackerov-dlya-telegram-opisanie-klan-hakerov",
-      "link_starvell": "https://starvell.com/offers/58cb3d94-9b03-406d-bb47-1fc6e931ea8a"
-    },
-    "user28": {
-      "name": "@B0090",
-      "price": "699 ₽ / 6 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/301aab40800c-prodam-yuzerneym-b0090-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/3dbeb256-cb48-4191-ad1d-b9d4a2235e94"
-    },
-    "user29": {
-      "name": "@D0013",
-      "price": "699 ₽ / 6 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/db606e551b7e-prodam-yuzerneym-d0013-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/04548499-c364-4131-aa86-d284df23ffa9"
     },
+    "user6": {
+      "name": "@CO700",
+      "price": "699 ₽ / 6 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/83f08c4764cd-prodam-yuzerneym-c0700-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/f2cc8c63-1c66-4670-a4f4-10721d06ff32"
+    },
+    "user7": {
+      "name": "@AO949",
+      "price": "699 ₽ / 6 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/b5c35802fd05-prodam-yuzerneym-a0949-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/e439fe4c-9018-4bf6-8a0a-1c1b9d5a0922"
+    },
+    "user8": {
+      "name": "@BOO90",
+      "price": "699 ₽ / 6 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/301aab40800c-prodam-yuzerneym-b0090-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/3dbeb256-cb48-4191-ad1d-b9d4a2235e94"
+    },
+    "user9": {
+      "name": "@ddos70",
+      "price": "749 ₽ / 6 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/d0831cc8655c-prodam-yuzerneym-ddos70-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/44cec98e-7f98-4ac4-90f5-06c1c4fb6625"
+    },
+    "user10": {
+      "name": "@MrTEHb",
+      "price": "1 199 ₽ / 10 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/d1fd95421352-prodam-yuzerneym-mrtehb-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/253bd2df-843e-4d00-a60c-fa3a3432e7fa"
+    },
+    "user11": {
+      "name": "@UserEblana",
+      "price": "1 499 ₽ / 13 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/0617fd34b95b-prodam-yuzerneym-usereblana-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/d044c6ae-09f9-42a9-bb40-5f0348209182"
+    },
+    "user12": {
+      "name": "@ApexJJ",
+      "price": "1 799 ₽ / 15 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/445330abc486-prodam-yuzerneym-apexjj-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/619562ef-1896-4cea-b8c2-64dfb9844436"
+    },
+    "user13": {
+      "name": "@MrPupsik",
+      "price": "1 899 ₽ / 16 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/cf3bc09f55cc-prodam-yuzerneym-mrpupsik-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/73b23419-d834-40db-aa6d-c4ef58101eb8"
+    },
+    "user14": {
+      "name": "@Vihodila",
+      "price": "2 499 ₽ / 21 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/a69ba9aaf69c-prodam-yuzerneym-vihodila-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/a77c03f6-cfeb-4961-85d1-c1ed37f94f7f"
+    },
+    "user15": {
+      "name": "@Radovalsya",
+      "price": "2 499 ₽ / 21 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/f56069ef4709-prodam-yuzerneym-radovalsya-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/e0c44b53-2b66-40cb-9988-feb7d12951d0"
+    },
+    "user16": {
+      "name": "@HackerScary",
+      "price": "2 599 ₽ / 22 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/dffc7620c789-prodam-yuzerneym-hackerscary-dlya-telegram-opisanie-strashnyy-haker",
+      "link_starvell": "https://starvell.com/offers/2f6fa067-1882-428f-9804-62f114233b95"
+    },
+    "user17": {
+      "name": "@MuseumHub",
+      "price": "2 699 ₽ / 23 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/7f463f5754ff-prodam-yuzerneym-museumhub-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/65a8e023-81e0-4d87-9766-298ce240c633"
+    },
+    "user18": {
+      "name": "@WorkSpaceHub",
+      "price": "2 799 ₽ / 24 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/4c1d8110aa5b-prodam-yuzerneym-workspacehub-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/44904985-51ed-425e-ac1a-832bd80a10d0"
+    },
+    "user19": {
+      "name": "@MegaTrueAdam",
+      "price": "2 999 ₽ / 25 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/dbccae497949-prodam-yuzerneym-megatrueadam-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/8cd56554-53dd-49da-8938-687960648ff8"
+    },
+    "user20": {
+      "name": "@SosiWomen",
+      "price": "2 999 ₽ / 25 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/7a2fcc03e37e-prodam-yuzerneym-sosiwomen-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/ad77728d-b70b-4fc2-800d-33f1d056102b"
+    },
+    "user21": {
+      "name": "@Somnivayus",
+      "price": "2 999 ₽ / 25 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/ee9142d6becd-prodam-yuzerneym-somnivalsya-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/26ed488f-7b9c-4a44-90c7-e1d0c8caf8c3"
+    },
+    "user22": {
+      "name": "@GigaBusiness",
+      "price": "2 999 ₽ / 25 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/56a16f1a55e2-prodam-yuzerneym-gigabusiness-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/0a675b5d-9e46-4e32-9e94-f542423c472e"
+    },
+    "user23": {
+      "name": "@ApexCC",
+      "price": "3 199 ₽ / 27 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/20372debcdfa-prodam-yuzerneym-apexcc-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/a636de8e-5b57-4384-b69e-d12bcead7d80"
+    },
+    "user24": {
+      "name": "@ClanHackerov",
+      "price": "3 499 ₽ / 30 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/3d3ce8a0c93e-prodam-yuzerneym-clanhackerov-dlya-telegram-opisanie-klan-hakerov",
+      "link_starvell": "https://starvell.com/offers/58cb3d94-9b03-406d-bb47-1fc6e931ea8a"
+    },
+    "user25": {
+      "name": "@JadeHat",
+      "price": "3 799 ₽ / 32 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/e42728f482bb-prodam-yuzerneym-jadehat-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/06a7f8a2-185e-4fcf-8887-ad121bef4fe2"
+    },
+    "user26": {
+      "name": "@ApexHH",
+      "price": "3 999 ₽ / 34 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/cc8d9b2ce295-prodam-yuzerneym-apexhh-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/2d12ff5b-89d2-40e9-b15e-1f8139bbad6a"
+    },
+    "user27": {
+      "name": "@ApexGG",
+      "price": "4 299 ₽ / 36 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/c73b15217889-prodam-yuzerneym-apexgg-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/116df7e6-5c53-4c43-b76e-a50b5664f6e1"
+    },
+    "user28": {
+      "name": "@DiamondHat",
+      "price": "4 499 ₽ / 38 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/7382e97dbe1a-prodam-yuzerneym-diamondhat-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/c7245689-ffb3-4d1e-8766-90a2160f1c6c"
+    },
+    "user29": {
+      "name": "@UslugaBoard",
+      "price": "4 699 ₽ / 40 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/6ac60bcfb34c-prodam-yuzerneym-uslugaboard-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/f2df0922-99d6-4ba6-baa4-e6821c59f59a"
+    },
     "user30": {
+      "name": "@Cunderochka",
+      "price": "4 999 ₽ / 42 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/3c107a2aea4e-prodam-yuzerneym-cunderochka-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/dcb3f397-3d4b-49e7-abce-cf823cf0ea27"
+    },
+    "user31": {
+      "name": "@SmartTitle",
+      "price": "4 999 ₽ / 42 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/7e168b3dffc2-prodam-yuzerneym-smarttitle-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/b63f2c12-0d2f-4afd-961c-b3bdb1eedbc0"
+    },
+    "user32": {
+      "name": "@PrimeTitle",
+      "price": "4 999 ₽ / 42 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/edde2f3e63cc-prodam-yuzerneym-primetitle-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/797efb10-5747-4a62-a3de-66ff5374258b"
+    },
+    "user33": {
+      "name": "@MasterTitle",
+      "price": "4 999 ₽ / 42 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/987f55ae0dea-prodam-yuzerneym-mastertitle-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/82cc9f2c-c6a8-409c-854b-4dc0a8f26ed6"
+    },
+    "user34": {
       "name": "@AlphaTitle",
       "price": "4 999 ₽ / 42 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/ee304605d9e9-prodam-yuzerneym-alphatitle-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/d5371429-e870-4162-8a1f-b989b8ebe47b"
+    },
+    "user35": {
+      "name": "@AzartWoman",
+      "price": "5 099 ₽ / 43 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/ce56c16261c9-prodam-yuzerneym-azartwoman-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/8310d6c9-9974-4e9b-8b97-122a56cbf01b"
+    },
+    "user36": {
+      "name": "@TraderTitle",
+      "price": "6 499 ₽ / 55 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/bb2761fd4e76-prodam-yuzerneym-tradertitle-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/e7a6af1d-2ada-498f-a48b-11e68855ab10"
+    },
+    "user37": {
+      "name": "@cmc33",
+      "price": "6 999 ₽ / 59 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/d57262a400ee-prodam-yuzerneym-cmc33-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/b7ff688b-e35d-4a05-ac6a-3ecc67193914"
+    }
+  },
+  "Аниме": {
+    "anime1": {
+      "name": "@RealAnimeshnik",
+      "price": "1 299 ₽ / 11 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/d8aa8f0657f7-prodam-yuzerneym-realanimeshnik-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/0a645e79-8268-4e02-b883-5ce723ca9e11"
+    },
+    "anime2": {
+      "name": "@YaTsundere",
+      "price": "3 999 ₽ / 34 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/8ed396c96326-prodam-yuzerneym-yatsundere-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/e7165210-71bb-4164-ab46-eadab214a58c"
+    },
+    "anime3": {
+      "name": "@DarudereKun",
+      "price": "3 999 ₽ / 34 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/129df88a760e-prodam-yuzerneym-daruderekun-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/9b9ff4d6-f3a5-4dcd-927f-d6f58a33770c"
+    },
+    "anime4": {
+      "name": "@KoshkaWoman",
+      "price": "3 499 ₽ / 30 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/7417924c0f69-prodam-yuzerneym-koshkawoman-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/4c60d285-0044-42fe-84c2-6ccf094c0260"
+    },
+    "anime5": {
+      "name": "@DarudereChan",
+      "price": "4 999 ₽ / 42 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/b93db5f1e439-prodam-yuzerneym-daruderechan-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/66b83d79-337b-49f7-8a63-f194433f28da"
+    },
+    "anime6": {
+      "name": "@DeredereKun",
+      "price": "5 499 ₽ / 47 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/8bb575710912-prodam-yuzerneym-derederekun-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/7afc5ee4-a233-4434-b337-0c1f07699909"
+    },
+    "anime7": {
+      "name": "@ImDarudere",
+      "price": "5 499 ₽ / 47 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/08ae8144ad9f-prodam-yuzerneym-imdarudere-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/2d4077b7-4c6f-4791-b954-0366406c05b3"
+    },
+    "anime8": {
+      "name": "@DandereKun",
+      "price": "5 999 ₽ / 51 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "",
+      "link_starvell": "https://starvell.com/offers/b90c51f2-aeb1-449e-bc12-252ce3c2bdf8"
+    },
+    "anime9": {
+      "name": "@ImDeredere",
+      "price": "6 499 ₽ / 55 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/f06a2e32cbb3-prodam-yuzerneym-imderedere-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/326c65e9-4a60-4a97-873d-5dbbdbbeb8c5"
+    },
+    "anime10": {
+      "name": "@MyYandere",
+      "price": "6 999 ₽ / 59 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/30845320c194-prodam-yuzerneym-myyandere-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/0981ea44-deb4-4a92-8389-70b2ec99f823"
+    },
+    "anime11": {
+      "name": "@ImKuudere",
+      "price": "7 999 ₽ / 68 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/d57e130a1cda-prodam-yuzerneym-imkuudere-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/c85332fd-87c6-450e-91eb-82daadb0d777"
+    },
+    "anime12": {
+      "name": "@OniiKun",
+      "price": "19 999 ₽ / 169 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/892eb4638f95-prodam-yuzerneym-oniikun-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/07ced6ee-5a01-4b13-bbb1-2db6e6c03edf"
     }
   },
   "Гаранты": {
     "garant1": {
-      "name": "@Nekita_garant",
-      "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/d626f6d705d0-prodam-yuzerneym-nekita_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/c25b6053-3ae5-40ff-983f-a159691a51f7"
-    },
-    "garant2": {
-      "name": "@Jocker_garant",
-      "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/2efd88f7f295-prodam-yuzerneym-jocker_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/0160a2fa-9580-40c1-9e0e-e7fe9ff70207"
-    },
-    "garant3": {
-      "name": "@Dmitry_garant",
-      "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/27844053abb7-prodam-yuzerneym-dmitry_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/83923097-247d-47a6-8b96-ab4d5ed6e467"
-    },
-    "garant4": {
-      "name": "@Robert_garant",
-      "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/819eff2d42a6-prodam-yuzerneym-robert_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/d2f725c0-6281-4b51-86fd-1b7bd5ffe911"
-    },
-    "garant5": {
-      "name": "@Maxim_garant",
-      "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/57f4a9e614fd-prodam-yuzerneym-maxim_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/44426098-2137-4979-a937-780a8ae7a7de"
-    },
-    "garant6": {
-      "name": "@Tested_garant",
-      "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/ed2ebc933d85-prodam-yuzerneym-tested_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/26f46f30-72db-4020-b24e-5aaa8c2c2f71"
-    },
-    "garant7": {
-      "name": "@TrustWorthy_garant",
-      "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/75da13ab4575-prodam-yuzerneym-trustworthy_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/f32796b5-5ac5-450e-9920-70e1eb027977"
-    },
-    "garant8": {
       "name": "@Defend_garant",
       "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/912ab08dce68-prodam-yuzerneym-defend_garant-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/699a4876-9b4a-4c08-b75a-6974f318a922"
     },
-    "garant9": {
-      "name": "@Leonid_garant",
+    "garant2": {
+      "name": "@Maxim_garant",
       "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/eb15a960ac91-prodam-yuzerneym-leonid_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/8ce2c2a3-43f3-4ec5-820e-3f9e5f374903"
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/57f4a9e614fd-prodam-yuzerneym-maxim_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/44426098-2137-4979-a937-780a8ae7a7de"
     },
-    "garant10": {
+    "garant3": {
+      "name": "@Robert_garant",
+      "price": "799 ₽ / 7 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/819eff2d42a6-prodam-yuzerneym-robert_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/d2f725c0-6281-4b51-86fd-1b7bd5ffe911"
+    },
+    "garant4": {
+      "name": "@TrustWorthy_garant",
+      "price": "799 ₽ / 7 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/75da13ab4575-prodam-yuzerneym-trustworthy_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/f32796b5-5ac5-450e-9920-70e1eb027977"
+    },
+    "garant5": {
       "name": "@Stable_garant",
       "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/17d46fd4a5a9-prodam-yuzerneym-stable_garant-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/eabc7f06-d89c-484e-95de-b054b60f4c33"
     },
-    "garant11": {
-      "name": "@Kiril_garant",
-      "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/2727748ab2e6-prodam-yuzerneym-kiril_garant-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/71e45eb9-9660-4728-ac4a-ce568fcf5d2d"
-    },
-    "garant12": {
+    "garant6": {
       "name": "@Clear_garant",
       "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/642575b7f7bf-prodam-yuzerneym-clear_garant-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/7d9d18ca-2e07-4c9d-adf6-c2583befb832"
+    },
+    "garant7": {
+      "name": "@Dmitry_garant",
+      "price": "799 ₽ / 7 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/27844053abb7-prodam-yuzerneym-dmitry_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/83923097-247d-47a6-8b96-ab4d5ed6e467"
+    },
+    "garant8": {
+      "name": "@Tested_garant",
+      "price": "799 ₽ / 7 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/ed2ebc933d85-prodam-yuzerneym-tested_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/26f46f30-72db-4020-b24e-5aaa8c2c2f71"
+    },
+    "garant9": {
+      "name": "@Nekita_garant",
+      "price": "799 ₽ / 7 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/d626f6d705d0-prodam-yuzerneym-nekita_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/c25b6053-3ae5-40ff-983f-a159691a51f7"
+    },
+    "garant10": {
+      "name": "@Jocker_garant",
+      "price": "799 ₽ / 7 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/2efd88f7f295-prodam-yuzerneym-jocker_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/0160a2fa-9580-40c1-9e0e-e7fe9ff70207"
+    },
+    "garant11": {
+      "name": "@Leonid_garant",
+      "price": "799 ₽ / 7 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/eb15a960ac91-prodam-yuzerneym-leonid_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/8ce2c2a3-43f3-4ec5-820e-3f9e5f374903"
+    },
+    "garant12": {
+      "name": "@Kiril_garant",
+      "price": "799 ₽ / 7 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/2727748ab2e6-prodam-yuzerneym-kiril_garant-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/71e45eb9-9660-4728-ac4a-ce568fcf5d2d"
     }
   },
   "Крипта / NFT": {
     "crypto1": {
-      "name": "@BNKMarket",
-      "price": "21 999 ₽ / 186 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/5a8b795460a0-prodam-yuzerneym-bnkmarket-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/22ef577f-df7a-45f8-84eb-d271fcef6bc3"
-    },
-    "crypto2": {
-      "name": "@VRXMarket",
-      "price": "16 499 ₽ / 140 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/4b98670a914d-prodam-yuzerneym-vrxmarket-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/6f9b2225-b8ae-4247-b26a-dd6f7133603b"
-    },
-    "crypto3": {
-      "name": "@QLMarket",
-      "price": "12 499 ₽ / 106 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/f8b0099c7d60-prodam-yuzerneym-qlmarket-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/9118c506-b409-4e2f-b57f-f7c429c64c64"
-    },
-    "crypto4": {
-      "name": "@DHSMarket",
-      "price": "14 999 ₽ / 127 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/75e50ce9a3d5-prodam-yuzerneym-dhsmarket-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/5c3b3f55-f8fa-4634-bcbf-2cb314d336fe"
-    },
-    "crypto5": {
-      "name": "@PRXMarket",
-      "price": "9 999 ₽ / 85 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/35f3781aee11-prodam-yuzerneym-sellersol-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/c5fdb056-7a63-4b88-a8cc-f6bdecca11d8"
-    },
-    "crypto6": {
-      "name": "@SellerSOL",
-      "price": "11 999 ₽ / 102 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/35f3781aee11-prodam-yuzerneym-sellersol-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/c5fdb056-7a63-4b88-a8cc-f6bdecca11d8"
-    },
-    "crypto7": {
-      "name": "@SellerNEAR",
-      "price": "8 999 ₽ / 76 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/2900b60223bb-prodam-yuzerneym-sellernear-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/373bdcc5-f040-46cd-97b3-5d215b227ca9"
-    },
-    "crypto8": {
-      "name": "@SellerXLM",
-      "price": "6 999 ₽ / 59 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/560fdb30c0a7-prodam-yuzerneym-sellerxlm-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/60d4f2df-41ed-4d4d-b86c-c3f754c31a59"
-    },
-    "crypto9": {
-      "name": "@SellerZEC",
-      "price": "6 499 ₽ / 55 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/82fcdd042546-prodam-yuzerneym-sellerzec-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/dd9fbff4-0277-4f2f-8fcf-359af105d400"
-    },
-    "crypto10": {
-      "name": "@BTCseler",
-      "price": "1 699 ₽ / 14 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/5ef6b967cb9e-prodam-yuzerneym-btcseler-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/8e70de02-7a9d-4536-ba30-df38183bae0e"
-    },
-    "crypto11": {
-      "name": "@SelerETH",
-      "price": "1 999 ₽ / 17 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/9f0b3172c216-prodam-yuzerneym-selereth-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/823bca97-c5f1-4e95-990b-32cc0e50e7d5"
-    },
-    "crypto12": {
-      "name": "@SelerBNB",
-      "price": "1 999 ₽ / 17 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/b2efc333cce7-prodam-yuzerneym-selerbnb-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/b5b03c21-9d1c-4dcb-8fb5-99fa61bf82f0"
-    },
-    "crypto13": {
-      "name": "@ProdavecBTC",
-      "price": "4 799 ₽ / 41 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/c92a92eaa53f-prodam-yuzerneym-mrtehb-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/3f98d2f4-32b0-4001-b6f8-13b6d63598e6"
-    },
-    "crypto14": {
-      "name": "@ProdavecETH",
-      "price": "3 899 ₽ / 33 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/28f371878aab-prodam-yuzerneym-prodaveceth-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/ba9ac47f-7dc4-44db-b1e8-6e3ada93c0eb"
-    },
-    "crypto15": {
-      "name": "@ProdavecUSD",
-      "price": "2 299 ₽ / 19 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/10ac5c783552-prodam-yuzerneym-prodavecusd-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/0399ba06-3031-41b9-a733-8fbe51e2eeb5"
-    },
-    "crypto16": {
-      "name": "@ProdavecGRAM",
-      "price": "2 999 ₽ / 25 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/c7914a033db5-prodam-yuzerneym-prodavecgram-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/b95878c7-9338-4407-8558-ca59bc17ea69"
-    },
-    "crypto17": {
-      "name": "@ProdavecBNB",
-      "price": "1 899 ₽ / 16 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/ed87991df25b-prodam-yuzerneym-prodavecbnb-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/9802e279-4626-460e-b79e-cb574513a015"
-    },
-    "crypto18": {
-      "name": "@ProdavecTON",
-      "price": "2 999 ₽ / 25 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/45268d9fed41-prodam-yuzerneym-prodavecton-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/3d8e04f7-37a6-4062-8b37-bc02848f3486"
-    },
-    "crypto19": {
-      "name": "@coin400",
-      "price": "2 499 ₽ / 21 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/21244f410a7e-prodam-yuzerneym-coin400-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/922e7ad2-79f8-43be-88a3-4f8cdc058707"
-    },
-    "crypto20": {
-      "name": "@gram181",
-      "price": "1 599 ₽ / 14 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/7327e3385872-prodam-yuzerneym-gram181-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/0bfe3283-dabd-402e-a128-b948bb66444b"
-    },
-    "crypto21": {
-      "name": "@nft156",
-      "price": "1 399 ₽ / 12 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/3aca45595366-prodam-yuzerneym-nft156-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/4e980eea-73c2-46cf-a8a8-1a42d78005fb"
-    },
-    "crypto22": {
       "name": "@ton363",
       "price": "699 ₽ / 6 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/28cfdeed5cb0-prodam-yuzerneym-ton173-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/f9a5722b-22d3-4f3a-8a14-088dda14b595"
     },
-    "crypto23": {
+    "crypto2": {
       "name": "@crypto424",
       "price": "799 ₽ / 7 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/41adeee1838b-prodam-yuzerneym-mrtehb-dlya-telegram-opisanie",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "",
       "link_starvell": "https://starvell.com/offers/6da6a793-cd9b-44b1-aa4f-771f7b352de3"
     },
-    "crypto24": {
-      "name": "@DealerOfCoins",
-      "price": "5 999 ₽ / 51 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
-      "link_playerok": "https://playerok.com/products/ab4c8fe899cb-prodam-yuzerneym-dealerofcoins-dlya-telegram-opisanie",
-      "link_starvell": "https://starvell.com/offers/11694037-9abb-41d8-aef7-bbfa281dc9f9"
+    "crypto3": {
+      "name": "@nft156",
+      "price": "1 399 ₽ / 12 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/3aca45595366-prodam-yuzerneym-nft156-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/4e980eea-73c2-46cf-a8a8-1a42d78005fb"
     },
-    "crypto25": {
+    "crypto4": {
+      "name": "@gram181",
+      "price": "1 599 ₽ / 14 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/7327e3385872-prodam-yuzerneym-gram181-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/0bfe3283-dabd-402e-a128-b948bb66444b"
+    },
+    "crypto5": {
+      "name": "@BTCseler",
+      "price": "1 699 ₽ / 14 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/5ef6b967cb9e-prodam-yuzerneym-btcseler-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/8e70de02-7a9d-4536-ba30-df38183bae0e"
+    },
+    "crypto6": {
+      "name": "@ProdavecBNB",
+      "price": "1 899 ₽ / 16 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/ed87991df25b-prodam-yuzerneym-prodavecbnb-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/9802e279-4626-460e-b79e-cb574513a015"
+    },
+    "crypto7": {
+      "name": "@SelerETH",
+      "price": "1 999 ₽ / 17 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/9f0b3172c216-prodam-yuzerneym-selereth-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/823bca97-c5f1-4e95-990b-32cc0e50e7d5"
+    },
+    "crypto8": {
+      "name": "@SelerBNB",
+      "price": "1 999 ₽ / 17 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/b2efc333cce7-prodam-yuzerneym-selerbnb-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/b5b03c21-9d1c-4dcb-8fb5-99fa61bf82f0"
+    },
+    "crypto9": {
+      "name": "@ProdavecUSD",
+      "price": "2 299 ₽ / 19 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/10ac5c783552-prodam-yuzerneym-prodavecusd-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/0399ba06-3031-41b9-a733-8fbe51e2eeb5"
+    },
+    "crypto10": {
       "name": "@Sellszn",
       "price": "2 399 ₽ / 20 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/541b1fd78ff9-prodam-yuzerneym-sellszn-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/d0f964d9-6bf6-44bd-a54f-7e6bc85229e0"
     },
-    "crypto26": {
+    "crypto11": {
       "name": "@NFTScupchik",
       "price": "2 499 ₽ / 21 TON",
-      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-60-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/f2cc17440920-prodam-yuzerneym-nftscupchik-dlya-telegram-opisanie-nft-skupshchik",
       "link_starvell": "https://starvell.com/offers/d462db6e-a2fe-4f80-91c0-c9e07ec7645f"
+    },
+    "crypto12": {
+      "name": "@coin400",
+      "price": "2 499 ₽ / 21 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/21244f410a7e-prodam-yuzerneym-coin400-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/922e7ad2-79f8-43be-88a3-4f8cdc058707"
+    },
+    "crypto13": {
+      "name": "@ProdavecTON",
+      "price": "2 999 ₽ / 25 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/45268d9fed41-prodam-yuzerneym-prodavecton-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/3d8e04f7-37a6-4062-8b37-bc02848f3486"
+    },
+    "crypto14": {
+      "name": "@ProdavecGRAM",
+      "price": "2 999 ₽ / 25 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/c7914a033db5-prodam-yuzerneym-prodavecgram-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/b95878c7-9338-4407-8558-ca59bc17ea69"
+    },
+    "crypto15": {
+      "name": "@ProdavecETH",
+      "price": "3 899 ₽ / 33 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/28f371878aab-prodam-yuzerneym-prodaveceth-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/ba9ac47f-7dc4-44db-b1e8-6e3ada93c0eb"
+    },
+    "crypto16": {
+      "name": "@ProdavecBTC",
+      "price": "4 799 ₽ / 41 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "",
+      "link_starvell": "https://starvell.com/offers/3f98d2f4-32b0-4001-b6f8-13b6d63598e6"
+    },
+    "crypto17": {
+      "name": "@DealerOfCoins",
+      "price": "5 999 ₽ / 51 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/ab4c8fe899cb-prodam-yuzerneym-dealerofcoins-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/11694037-9abb-41d8-aef7-bbfa281dc9f9"
+    },
+    "crypto18": {
+      "name": "@SellerZEC",
+      "price": "6 499 ₽ / 55 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/82fcdd042546-prodam-yuzerneym-sellerzec-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/dd9fbff4-0277-4f2f-8fcf-359af105d400"
+    },
+    "crypto19": {
+      "name": "@SellerXLM",
+      "price": "6 999 ₽ / 59 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/560fdb30c0a7-prodam-yuzerneym-sellerxlm-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/60d4f2df-41ed-4d4d-b86c-c3f754c31a59"
+    },
+    "crypto20": {
+      "name": "@SellerNEAR",
+      "price": "8 999 ₽ / 76 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/2900b60223bb-prodam-yuzerneym-sellernear-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/373bdcc5-f040-46cd-97b3-5d215b227ca9"
+    },
+    "crypto21": {
+      "name": "@PRXMarket",
+      "price": "9 999 ₽ / 85 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "",
+      "link_starvell": "https://starvell.com/offers/c5fdb056-7a63-4b88-a8cc-f6bdecca11d8"
+    },
+    "crypto22": {
+      "name": "@SellerSOL",
+      "price": "11 999 ₽ / 102 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/a3858981399b-prodam-yuzerneym-sellersol-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/f337c06e-50e3-47a5-a728-eae8e32abd6a"
+    },
+    "crypto23": {
+      "name": "@QLMarket",
+      "price": "12 499 ₽ / 106 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/f8b0099c7d60-prodam-yuzerneym-qlmarket-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/9118c506-b409-4e2f-b57f-f7c429c64c64"
+    },
+    "crypto24": {
+      "name": "@DHSMarket",
+      "price": "14 999 ₽ / 127 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/75e50ce9a3d5-prodam-yuzerneym-dhsmarket-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/5c3b3f55-f8fa-4634-bcbf-2cb314d336fe"
+    },
+    "crypto25": {
+      "name": "@VRXMarket",
+      "price": "16 499 ₽ / 140 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/4b98670a914d-prodam-yuzerneym-vrxmarket-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/6f9b2225-b8ae-4247-b26a-dd6f7133603b"
+    },
+    "crypto26": {
+      "name": "@BNKMarket",
+      "price": "21 999 ₽ / 186 TON",
+      "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
+      "link_playerok": "https://playerok.com/products/5a8b795460a0-prodam-yuzerneym-bnkmarket-dlya-telegram-opisanie",
+      "link_starvell": "https://starvell.com/offers/22ef577f-df7a-45f8-84eb-d271fcef6bc3"
     }
   }
 }
