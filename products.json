@@ -614,6 +614,23 @@
       "link_ggsel": "https://ggsel.net/catalog/product/prodam-bolee-80-unikalnyx-premialnyx-iuzerneimov-kanalom-102576666",
       "link_playerok": "https://playerok.com/products/5a8b795460a0-prodam-yuzerneym-bnkmarket-dlya-telegram-opisanie",
       "link_starvell": "https://starvell.com/offers/22ef577f-df7a-45f8-84eb-d271fcef6bc3"
+    },
+  },
+  "NFT Аукционы": {
+    "auction1": {
+      "name": "@sellerxlm",
+      "fragment_url": "https://fragment.com/username/sellerxlm",
+    },
+    "auction2": {
+      "name": "@sellerzec",
+      "fragment_url": "https://fragment.com/username/sellerzec",
+    },
+    "auction3": {
+      "name": "@cmc33",
+      "fragment_url": "https://fragment.com/username/cmc33",
+    },
+    "auction4": {
+      "name": "@dealerofcoins",
+      "fragment_url": "https://fragment.com/username/dealerofcoins",
     }
   }
-}
