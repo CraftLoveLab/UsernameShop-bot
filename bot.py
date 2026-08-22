@@ -2,6 +2,7 @@ import logging
 import json
 import os
 import re
+import requests
 from datetime import datetime
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes
@@ -28,6 +29,54 @@ def load_products():
     except FileNotFoundError:
         print("❌ Файл products.json не найден!")
         return {}
+
+# ========== ПАРСИНГ FRAGMENT ==========
+def parse_fragment_auction(username):
+    """
+    Парсит страницу аукциона на Fragment и возвращает данные.
+    Возвращает dict с полями: current_bid, bids_count, time_left, status
+    """
+    url = f"https://fragment.com/username/{username}"
+    try:
+        response = requests.get(url, timeout=10)
+        if response.status_code != 200:
+            return None
+        
+        html = response.text
+        
+        # Пытаемся найти текущую ставку
+        bid_pattern = r'(\d+)\s*TON'
+        bids = re.findall(bid_pattern, html)
+        
+        # Пытаемся найти количество ставок
+        bids_count_pattern = r'(\d+)\s*bids'
+        bids_count = re.findall(bids_count_pattern, html)
+        
+        # Пытаемся найти статус аукциона
+        if "Auction will close soon" in html:
+            status = "🟢 Аукцион активен"
+        elif "Auction will start after you place the first bid" in html:
+            status = "⏳ Ожидает первой ставки"
+        elif "Auction ended" in html or "Sold" in html:
+            status = "🔴 Аукцион завершён"
+        else:
+            status = "🟡 Информация уточняется"
+        
+        # Текущая ставка (первое найденное число)
+        current_bid = bids[0] if bids else "0"
+        
+        # Количество ставок
+        bids_count_val = bids_count[0] if bids_count else "0"
+        
+        return {
+            "current_bid": current_bid,
+            "bids_count": bids_count_val,
+            "status": status,
+            "url": url
+        }
+    except Exception as e:
+        print(f"⚠️ Ошибка парсинга {username}: {e}")
+        return None
 
 # Применяем скидку
 def apply_discount(price_text, discount_percent=25):
@@ -137,9 +186,13 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         stats = load_stats()
         keyboard = []
         for prod_id, info in items.items():
-            discounted_price = apply_discount(info['price'], DISCOUNT)
-            views = stats.get(prod_id, 0)
-            button_text = f"{info['name']} — {discounted_price} 👁️{views}"
+            # Для категории NFT Аукционы показываем специальную кнопку
+            if category == "NFT Аукционы":
+                button_text = f"{info['name']} ⏳ Аукцион"
+            else:
+                discounted_price = apply_discount(info['price'], DISCOUNT)
+                views = stats.get(prod_id, 0)
+                button_text = f"{info['name']} — {discounted_price} 👁️{views}"
             keyboard.append([InlineKeyboardButton(button_text, callback_data=f"prod_{prod_id}")])
         keyboard.append([InlineKeyboardButton("🔙 Назад к категориям", callback_data="show_categories")])
         await query.edit_message_text(
@@ -151,29 +204,66 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data.startswith("prod_"):
         prod_id = data[5:]
         found = None
+        found_category = None
         for cat, items in products.items():
             if prod_id in items:
                 found = items[prod_id]
+                found_category = cat
                 break
-        if found:
-            views = increment_views(prod_id)
-            discounted_price = apply_discount(found['price'], DISCOUNT)
-            text = (
-                f"💎 <b>{found['name']}</b>\n\n"
-                f"💰 <b>Цена:</b>\n{discounted_price}\n\n"
-                f"👁️ <b>Просмотров:</b> {views}\n\n"
-                f"<i>Выбери способ покупки:</i>"
-            )
+        
+        if not found:
+            await query.edit_message_text("❌ Товар не найден.")
+            return
+
+        # ====== НОВАЯ ЛОГИКА ДЛЯ NFT АУКЦИОНОВ ======
+        if found_category == "NFT Аукционы":
+            # Парсим данные с Fragment
+            username = found['name'].replace('@', '')
+            auction_data = parse_fragment_auction(username)
+            
+            if auction_data:
+                text = (
+                    f"💎 <b>{found['name']}</b>\n\n"
+                    f"📊 <b>Актуальные данные аукциона:</b>\n"
+                    f"💰 Текущая ставка: <b>{auction_data['current_bid']} TON</b>\n"
+                    f"👥 Количество ставок: {auction_data['bids_count']}\n"
+                    f"📌 Статус: {auction_data['status']}\n\n"
+                    f"🔗 <a href='{auction_data['url']}'>Перейти на Fragment</a>\n\n"
+                    f"<i>Сделай ставку и получи этот юзернейм как NFT!</i>"
+                )
+            else:
+                text = (
+                    f"💎 <b>{found['name']}</b>\n\n"
+                    f"⚠️ <b>Не удалось получить данные с Fragment</b>\n"
+                    f"Попробуй обновить позже или перейди по ссылке:\n"
+                    f"🔗 <a href='{found['fragment_url']}'>Открыть аукцион</a>"
+                )
+            
             keyboard = [
-                [InlineKeyboardButton("🔗 GGSEL", url=found.get("link_ggsel", ""))],
-                [InlineKeyboardButton("🔗 PLAYEROK", url=found.get("link_playerok", ""))],
-                [InlineKeyboardButton("🔗 STARVELL", url=found.get("link_starvell", ""))],
-                [InlineKeyboardButton("💬 Договориться лично", callback_data=f"contact_{prod_id}")],
+                [InlineKeyboardButton("🔗 Открыть аукцион", url=found.get("fragment_url", ""))],
+                [InlineKeyboardButton("🔄 Обновить данные", callback_data=f"prod_{prod_id}")],
                 [InlineKeyboardButton("🔙 Назад", callback_data="show_categories")]
             ]
             await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="HTML")
-        else:
-            await query.edit_message_text("❌ Товар не найден.")
+            return
+
+        # ====== ОБЫЧНАЯ ЛОГИКА ДЛЯ ОСТАЛЬНЫХ КАТЕГОРИЙ ======
+        views = increment_views(prod_id)
+        discounted_price = apply_discount(found['price'], DISCOUNT)
+        text = (
+            f"💎 <b>{found['name']}</b>\n\n"
+            f"💰 <b>Цена:</b>\n{discounted_price}\n\n"
+            f"👁️ <b>Просмотров:</b> {views}\n\n"
+            f"<i>Выбери способ покупки:</i>"
+        )
+        keyboard = [
+            [InlineKeyboardButton("🔗 GGSEL", url=found.get("link_ggsel", ""))],
+            [InlineKeyboardButton("🔗 PLAYEROK", url=found.get("link_playerok", ""))],
+            [InlineKeyboardButton("🔗 STARVELL", url=found.get("link_starvell", ""))],
+            [InlineKeyboardButton("💬 Договориться лично", callback_data=f"contact_{prod_id}")],
+            [InlineKeyboardButton("🔙 Назад", callback_data="show_categories")]
+        ]
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="HTML")
 
     elif data.startswith("contact_"):
         prod_id = data[8:]
