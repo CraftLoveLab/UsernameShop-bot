@@ -29,6 +29,9 @@ def load_products():
     except FileNotFoundError:
         print("❌ Файл products.json не найден!")
         return {}
+    except json.JSONDecodeError as e:
+        print(f"❌ Ошибка JSON в products.json: {e}")
+        return {}
 
 # ========== ПАРСИНГ FRAGMENT ==========
 def parse_fragment_auction(username):
@@ -164,6 +167,10 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     data = query.data
     products = load_products()
+    # Если products пуст из-за ошибки, выходим
+    if not products:
+        await query.edit_message_text("⚠️ Ошибка загрузки товаров. Попробуйте позже.")
+        return
     DISCOUNT = 25 if is_discount_active() else 0
 
     if data == "show_categories":
@@ -183,6 +190,9 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data.startswith("cat_"):
         category = data[4:]
         items = products.get(category, {})
+        if not items:
+            await query.edit_message_text("⚠️ В этой категории пока нет товаров.")
+            return
         stats = load_stats()
         keyboard = []
         for prod_id, info in items.items():
@@ -236,7 +246,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     f"💎 <b>{found['name']}</b>\n\n"
                     f"⚠️ <b>Не удалось получить данные с Fragment</b>\n"
                     f"Попробуй обновить позже или перейди по ссылке:\n"
-                    f"🔗 <a href='{found['fragment_url']}'>Открыть аукцион</a>"
+                    f"🔗 <a href='{found.get('fragment_url', '')}'>Открыть аукцион</a>"
                 )
             
             keyboard = [
